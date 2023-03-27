@@ -36,7 +36,13 @@ def read_variable_from_csv(filename):
 
 def daily_total(data):
     """Calculate the daily total of a 2D data array.
-    Index must be np.datetime64 compatible format."""
+
+    :param data: A 2D Pandas data frame with measurement data.
+                 Index must be np.datetime64 compatible format.
+                 Columns are measurement sites.
+    :returns: A 2D Pandas data frame with total values of the
+              measurements for each day.
+    """
     return data.groupby(data.index.date).sum()
 
 def daily_mean(data):
