@@ -47,18 +47,36 @@ def daily_total(data):
 
 def daily_mean(data):
     """Calculate the daily mean of a 2D data array.
-    Index must be np.datetime64 compatible format."""
+
+    :param data: A 2D Pandas data frame with measurement data.
+                 Index must be np.datetime64 compatible format.
+                 Columns are measurement sites.
+    :returns: A 2D Pandas data frame with total values of the
+              measurements for each day.
+    """
     return data.groupby(data.index.date).mean()
 
 
 def daily_max(data):
     """Calculate the daily max of a 2D data array.
-    Index must be np.datetime64 compatible format."""
+
+    :param data: A 2D Pandas data frame with measurement data.
+                 Index must be np.datetime64 compatible format.
+                 Columns are measurement sites.
+    :returns: A 2D Pandas data frame with total values of the
+              measurements for each day.
+    """
     return data.groupby(data.index.date).max()
 
 
 def daily_min(data):
     """Calculate the daily min of a 2D data array.
-    Index must be np.datetime64 compatible format."""
+    
+    :param data: A 2D Pandas data frame with measurement data.
+                 Index must be np.datetime64 compatible format.
+                 Columns are measurement sites.
+    :returns: A 2D Pandas data frame with total values of the
+              measurements for each day.
+    """
     return data.groupby(data.index.date).min()
 
