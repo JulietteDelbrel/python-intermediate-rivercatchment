@@ -71,7 +71,7 @@ def daily_max(data):
 
 def daily_min(data):
     """Calculate the daily min of a 2D data array.
-    
+
     :param data: A 2D Pandas data frame with measurement data.
                  Index must be np.datetime64 compatible format.
                  Columns are measurement sites.
