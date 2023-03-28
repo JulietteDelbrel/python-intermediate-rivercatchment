@@ -21,8 +21,8 @@ def read_variable_from_csv(filename):
     """
     dataset = pd.read_csv(filename, usecols=['Date', 'Site', 'Rainfall (mm)'])
 
-    dataset = dataset.rename({'Date':'OldDate'}, axis='columns')
-    dataset['Date'] = [pd.to_datetime(x,dayfirst=True) for x in dataset['OldDate']]
+    dataset = dataset.rename({'Date': 'OldDate'}, axis='columns')
+    dataset['Date'] = [pd.to_datetime(x, dayfirst=True) for x in dataset['OldDate']]
     dataset = dataset.drop('OldDate', axis='columns')
 
     newdataset = pd.DataFrame(index=dataset['Date'].unique())
@@ -79,4 +79,3 @@ def daily_min(data):
               measurements for each day.
     """
     return data.groupby(data.index.date).min()
-
